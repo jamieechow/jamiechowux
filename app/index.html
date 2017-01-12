@@ -26,6 +26,23 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+<div ng-controller="BehanceCtrl">
+    <div class="container">
+        <div class="row">
+            <ul>
+                <li ng-repeat="project in behanceResult">
+                    <h1>{{project.name}}</h1>
+                    <h2>{{project.fields}}</h2>
+
+                    <img ng-src="{{project.covers.original}}">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
     <video autoplay loop id="video-background" muted>
       <source src="./video/waves.mp4" type="video/mp4">
     </video>
