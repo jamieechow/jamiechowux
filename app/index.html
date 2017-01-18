@@ -18,38 +18,66 @@
 <script src="https://use.typekit.net/wlj6fsw.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>  
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="jamiechowuxApp">
+  <body ng-app="jamiechowuxApp" class="site-wrap">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-<div ng-controller="BehanceCtrl">
+<div class="meganav">
+  <div class="desktop hidden-xs hidden-sm">
     <div class="container">
-        <div class="row">
-            <ul>
-                <li ng-repeat="project in behanceResult">
-                    <h1>{{project.name}}</h1>
-                    <h2>{{project.fields}}</h2>
-
-                    <img ng-src="{{project.covers.original}}">
-                </li>
-            </ul>
-        </div>
+        <!-- TODO: FIX THIS div class="logo-splash">
+              <i class="sprite sprite-logo_animate-2_00039"></i>
+        </div -->
+        <a ng-href="#home" class="logo-mobile"></a>
+        <ul class="site-links">
+          <li><a ng-href="#!/work">work</a></li>
+          <li><a ng-href="#!/about">about</a></li>
+          <li><a ng-href="#!/contact">contact</a></li>
+        </ul>
     </div>
+  </div>
+  
+  <div class="mobile hidden-md hidden-lg">
+    <div class="mobile-header">
+      <div class="logo-mobile"></div>
+      <div class="mobile-nav-trigger">
+      </div>
+      <ul class="navigation">
+          <li class="nav-item"><a href="#work">work</a></li>
+          <li class="nav-item"><a href="#about">about</a></li>
+          <li class="nav-item"><a href="#contact">contact</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-
-
+<!-- div class="component-hero-video">
     <video autoplay loop id="video-background" muted>
+      <source src="./video/waves.mp4" type="video/mp4">
+    </video>
+</div -->
+
+
+<div ng-view>
+
+</div>
+
+<div class="footer">
+  <h3>Jamie Chow 2017</h3>
+</div>
+
+    <!-- video autoplay loop id="video-background" muted>
       <source src="./video/waves.mp4" type="video/mp4">
     </video>
 
     <div class="logo-splash">
           <i class="sprite sprite-logo_animate-2_00039"></i>
-    </div>
+    </div -->
 
 
     <!-- div class="header">
@@ -76,6 +104,8 @@
        ga('send', 'pageview');
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TimelineMax.min.js"></script>    
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -92,11 +122,13 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/vendor/polyfills.js"></script>
         <script src="scripts/vendor/contentful.min.js"></script>
         <script src="scripts/vendor/require.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/work.js"></script>
         <!-- endbuild -->
 </body>
 </html>

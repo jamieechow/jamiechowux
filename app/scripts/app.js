@@ -8,28 +8,32 @@
  *
  * Main module of the application.
  */
-angular
-  .module('jamiechowuxApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
+
+var app = angular.module('jamiechowuxApp', ['ngRoute']);
+app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+  $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        controller: 'HomeCtrl',
+        controllerAs: 'home',
+        animation: 'slide'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controllerAs: 'about',
+        animation: 'slide'
+      })
+      .when('/work', {
+        templateUrl: 'views/work.html',
+        controller: 'WorkCtrl',
+        controllerAs: 'work',
+        animation: 'slide'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/',
+        animation: 'slide'
       });
-  });
+}]); 
+
+

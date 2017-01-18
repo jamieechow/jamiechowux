@@ -1,23 +1,48 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div ng-controller="HomeCtrl">
+<section class="component-hero-video">
+    <div class="video-container">
+        <div class="title-container">
+            <div class="headline">
+                  <h1>Hello there</h1>
+            </div>
+            <div class="description">
+                <div class="inner">Flexitarian church-key freegan pabst twee shoreditch, leggings +1 letterpress fashion axe XOXO distillery.</div>
+            </div>
+        </div>
+        <video autoplay loop class="fillWidth">
+            <source src="./video/waves.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>
+        <div class="poster hidden">
+            <!-- img src="http://www.videojs.com/img/poster.jpg" alt="" -->
+        </div>
+        <div class="bottom-center">
+          <button class="scroll-next animated bounce">
+          </button>  
+        </div>      
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+    </div>
+</section>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+    <section class="container">
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+      <div ng-repeat="project in projects | limitTo: 3">
+        <div class="col-xs-12 col-sm-6 col-md-4 repository-card-container">
+
+
+    <div class="card">
+          <!-- front card content -->
+        <section class="repositoryCard front" style="background-image:url({{project.covers.original}});">
+              <h1>{{project.name}}</h1>
+        </section>
+        <!-- end front card content -->
+        
+        <!-- back card content -->
+        <section class="repositoryCard back">
+              <p>{{project.description}}</p>
+              
+        </section>
+        <!-- end back card content -->
+    </div>
+        </div>
+      </div>
+  </section>
 </div>

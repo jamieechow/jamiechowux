@@ -7,11 +7,8 @@
  * # AboutCtrl
  * Controller of the jamiechowuxApp
  */
+ console.log(angular);
 angular.module('jamiechowuxApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AboutCtrl', function($scope, $http, $rootScope) {
+  	console.log("Init AboutCtrl");
   });
